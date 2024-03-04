@@ -3,11 +3,20 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <!--Etiqueta de define que Springframework va hacer el padre de SpringMicroservices.-->
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.3</version>
+  </parent>
+
   <groupId>com.mycompany.app</groupId>
   <artifactId>SpringMicroservices</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <name>SpringMicroservices</name>
+  <!--Define que va ser el padre de los otros proyectos.-->
+  <packaging>pom</packaging>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -16,10 +25,23 @@
   </properties>
 
   <dependencies>
-
+    <!--Unica dependencia que van a heredar todos los microservicios. -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.28</version>
+    </dependency>
   </dependencies>
 
   <build>
-
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>3.1.4</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 </project>
