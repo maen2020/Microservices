@@ -22,6 +22,7 @@
     <!--Definir los microservicios que va hacer hijos de SpringMicroservices.  -->
     <module>microservice-gateway</module>
     <module>microservice-eureka</module>
+    <module>microservice-config</module>
   </modules>
 
   <properties>
