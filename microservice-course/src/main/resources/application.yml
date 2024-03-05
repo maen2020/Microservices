@@ -1,0 +1,32 @@
+#Definir puerto para el microservicio.
+server:
+  port: 9090
+
+#Definir nombre del microservicio.
+spring:
+  application:
+    name: msvc-course
+
+  #Configurar la base de datos.
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/courseDB
+    username: postgre
+    password: maen
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  #Configuracion temporal para lenvantar los microservicios sin problema.
+  config:
+    import: optional:configserver:http://localhost:8888
+
+#Configuracion para registrar este microservicio en eureka.
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
