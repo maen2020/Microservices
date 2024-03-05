@@ -19,8 +19,9 @@
   <packaging>pom</packaging>
 
   <modules>
-    <!--Definir que microservice-gateway va hacer hijo de SpringMicroservices.  -->
+    <!--Definir los microservicios que va hacer hijos de SpringMicroservices.  -->
     <module>microservice-gateway</module>
+    <module>microservice-eureka</module>
   </modules>
 
   <properties>
