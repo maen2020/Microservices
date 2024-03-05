@@ -18,6 +18,11 @@
   <!--Define que va ser el padre de los otros proyectos.-->
   <packaging>pom</packaging>
 
+  <modules>
+    <!--Definir que microservice-gateway va hacer hijo de SpringMicroservices.  -->
+    <module>microservice-gateway</module>
+  </modules>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
