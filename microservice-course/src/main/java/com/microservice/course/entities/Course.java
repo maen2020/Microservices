@@ -1,4 +1,4 @@
-package com.microservice.student.entities;
+package com.microservice.course.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,24 +6,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//
 @Data // Get y Set.
 @Entity // Entidad.
 @Builder
 @AllArgsConstructor // Constructor con parametros.
 @NoArgsConstructor // Constructor vacio.
-@Table(name = "students")
-public class Student {
+@Table(name = "courses")
+public class Course {
 
-    //Atributos de la clase.
+    //Atributos de la clase Course.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "course_id")
-    private Long courseId;
+    private String teacher;
 }
