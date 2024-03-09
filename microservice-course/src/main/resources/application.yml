@@ -10,8 +10,8 @@ spring:
   #Configurar la base de datos.
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/courseDB
-    username: postgre
+    url: jdbc:postgresql://localhost:5432/coursesDB
+    username: postgres
     password: maen
   jpa:
     hibernate:

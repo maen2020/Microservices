@@ -10,7 +10,7 @@ spring:
   #Configurar la base de datos.
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/studentDB
+    url: jdbc:mysql://localhost:3306/studentsDB
     username: root
     password: maen
   jpa:
