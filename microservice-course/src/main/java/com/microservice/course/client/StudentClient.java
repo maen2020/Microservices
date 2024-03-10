@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 //Colocar el nombre del microservicio al cual va a consumir y la url principal.
-@FeignClient(name = "msvc-student", url = "localhost:8090/api/student")
+@FeignClient(name = "msvc-student", url = "localhost:8080/api/student")
 public interface StudentClient {
 
     //Peticion hacia el endpoint de Student.

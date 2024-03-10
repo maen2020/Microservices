@@ -1,0 +1,25 @@
+#Configuracion de spring boot Gateway.
+server:
+  port: 8080
+
+#Configuracion para redirigir a los microservicos.
+spring:
+  application:
+    name: msvc-gateway
+  #Configuracion temporal para lenvantar los microservicios sin problema.
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: students
+          uri: http://localhost:8090
+          predicates:
+            - Path=/api/student/**
+        - id: courses
+          uri: http://localhost:9090
+          predicates:
+            - Path=/api/course/**
