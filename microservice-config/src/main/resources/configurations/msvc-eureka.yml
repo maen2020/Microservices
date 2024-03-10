@@ -1,0 +1,19 @@
+#Configuracion del puerto.
+server:
+  port: 8761
+
+#Definir nombre al microservicio.
+spring:
+  application:
+    name: msvc-eureka
+
+#Configurar el servidor de eureka para que los demas microservicios se puedan registra o conectar a el.
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false #Decirle a eureka que no se registre a si mismo.
+    fetch-registry: false
+    server-url:
+      defaultZone: http://localhost:${server.port}/eureka #Definir el path con el que va a funcionar el servidor de eureka.
+

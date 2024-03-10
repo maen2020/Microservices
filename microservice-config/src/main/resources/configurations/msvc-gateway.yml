@@ -1,0 +1,27 @@
+#Configuracion para que no se registre en Eureka.
+eureka:
+  client:
+    register-with-eureka: false
+
+#Configuracion de spring boot Gateway.
+server:
+  port: 8080
+
+#Configuracion para redirigir a los microservicos.
+spring:
+  application:
+    name: msvc-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: students
+          uri: http://localhost:8090
+          predicates:
+            - Path=/api/student/**
+        - id: courses
+          uri: http://localhost:9090
+          predicates:
+            - Path=/api/course/**
